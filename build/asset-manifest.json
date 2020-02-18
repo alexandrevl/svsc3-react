@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/streamervschat/static/css/main.d1b05096.chunk.css",
-    "main.js": "/streamervschat/static/js/main.72760ff9.chunk.js",
-    "main.js.map": "/streamervschat/static/js/main.72760ff9.chunk.js.map",
+    "main.js": "/streamervschat/static/js/main.13df0287.chunk.js",
+    "main.js.map": "/streamervschat/static/js/main.13df0287.chunk.js.map",
     "runtime-main.js": "/streamervschat/static/js/runtime-main.b9dadfed.js",
     "runtime-main.js.map": "/streamervschat/static/js/runtime-main.b9dadfed.js.map",
     "static/js/2.90018f79.chunk.js": "/streamervschat/static/js/2.90018f79.chunk.js",
     "static/js/2.90018f79.chunk.js.map": "/streamervschat/static/js/2.90018f79.chunk.js.map",
     "index.html": "/streamervschat/index.html",
-    "precache-manifest.d7f3548dde2fa1edf0dc8fc1e0969b2b.js": "/streamervschat/precache-manifest.d7f3548dde2fa1edf0dc8fc1e0969b2b.js",
+    "precache-manifest.ac1020241b49a5d085af7f1c84101035.js": "/streamervschat/precache-manifest.ac1020241b49a5d085af7f1c84101035.js",
     "service-worker.js": "/streamervschat/service-worker.js",
     "static/css/main.d1b05096.chunk.css.map": "/streamervschat/static/css/main.d1b05096.chunk.css.map",
     "static/js/2.90018f79.chunk.js.LICENSE.txt": "/streamervschat/static/js/2.90018f79.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.b9dadfed.js",
     "static/js/2.90018f79.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.72760ff9.chunk.js"
+    "static/js/main.13df0287.chunk.js"
   ]
 }
