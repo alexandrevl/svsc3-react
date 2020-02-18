@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/streamervschat/static/css/main.bba21ffa.chunk.css",
-    "main.js": "/streamervschat/static/js/main.0a3dfabc.chunk.js",
-    "main.js.map": "/streamervschat/static/js/main.0a3dfabc.chunk.js.map",
+    "main.js": "/streamervschat/static/js/main.8759f934.chunk.js",
+    "main.js.map": "/streamervschat/static/js/main.8759f934.chunk.js.map",
     "runtime-main.js": "/streamervschat/static/js/runtime-main.b9dadfed.js",
     "runtime-main.js.map": "/streamervschat/static/js/runtime-main.b9dadfed.js.map",
     "static/css/2.47e06e2e.chunk.css": "/streamervschat/static/css/2.47e06e2e.chunk.css",
     "static/js/2.6d5c72a5.chunk.js": "/streamervschat/static/js/2.6d5c72a5.chunk.js",
     "static/js/2.6d5c72a5.chunk.js.map": "/streamervschat/static/js/2.6d5c72a5.chunk.js.map",
     "index.html": "/streamervschat/index.html",
-    "precache-manifest.8110a82d7381f1babc4e736e23df5126.js": "/streamervschat/precache-manifest.8110a82d7381f1babc4e736e23df5126.js",
+    "precache-manifest.d5672c7b7afbe4cd6e56d126c83be3e3.js": "/streamervschat/precache-manifest.d5672c7b7afbe4cd6e56d126c83be3e3.js",
     "service-worker.js": "/streamervschat/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/streamervschat/static/css/2.47e06e2e.chunk.css.map",
     "static/css/main.bba21ffa.chunk.css.map": "/streamervschat/static/css/main.bba21ffa.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.47e06e2e.chunk.css",
     "static/js/2.6d5c72a5.chunk.js",
     "static/css/main.bba21ffa.chunk.css",
-    "static/js/main.0a3dfabc.chunk.js"
+    "static/js/main.8759f934.chunk.js"
   ]
 }

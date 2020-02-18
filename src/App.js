@@ -37,6 +37,14 @@ function App() {
             </ProgressBar>
           </Col>
         </Row>
+        <Row>
+          <Col xs lg="6" className="text-left">
+            <h5>Streamer</h5>
+          </Col>
+          <Col xs lg="6" className="text-right">
+            <h5>Chat</h5>
+          </Col>
+        </Row>
         <br />
         <Row className="justify-content-md-center">
           <Col>
