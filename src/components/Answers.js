@@ -6,53 +6,115 @@ export default class Answers extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: this.props.src
+      gameSettings: this.props.gameSettings
     };
+  }
+  componentDidUpdate(data) {
+    if (
+      this.state.gameSettings.question.totalVotes !==
+      data.gameSettings.question.totalVotes
+    ) {
+      console.log(data);
+      this.setState({
+        gameSettings: data.gameSettings
+      });
+    }
   }
 
   render() {
-    const img1 =
-      "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/144/apple/237/speak-no-evil-monkey_1f64a.png";
-    const img2 =
-      "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/144/apple/237/freezing-face_1f976.png";
-    const img3 =
-      "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/144/apple/237/clown-face_1f921.png";
-    const img4 =
-      "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/144/apple/237/extraterrestrial-alien_1f47d.png";
     return (
       <Container>
         <Row className="justify-content-md-center">
-          <h3>O que vai acontecer agora?</h3>
+          <h4>
+            {this.state.gameSettings.question.title} (
+            {this.state.gameSettings.question.totalVotes})
+          </h4>
         </Row>
         <Row className="justify-content-md-center">
           <Table striped bordered hover variant="dark">
             <tbody>
               <tr>
-                <td>
-                  <img src={img1} width="45vw" alt="img1" />
+                <td className="text-center align-middle">
+                  <img
+                    src={this.state.gameSettings.question.anwsers[0].img_emoji}
+                    width="45vw"
+                    alt="img1"
+                  />
                 </td>
-                <td className="text-left">
-                  <h3>O guinas começa a cantar</h3>
+                <td className="text-left align-middle">
+                  <h4>{this.state.gameSettings.question.anwsers[0].text}</h4>
                 </td>
-                <td>
-                  <img src={img2} width="45vw" alt="img1" />
+                <td className="text-left align-middle">
+                  <h4>
+                    {(
+                      (this.state.gameSettings.question.anwsers[0].votes *
+                        100) /
+                      this.state.gameSettings.question.totalVotes
+                    ).toFixed(1)}
+                    %
+                  </h4>
                 </td>
-                <td className="text-left">
-                  <h3>Aparece uma coisa incrível</h3>
+                <td className="text-center align-middle">
+                  <img
+                    src={this.state.gameSettings.question.anwsers[1].img_emoji}
+                    width="45vw"
+                    alt="img1"
+                  />
+                </td>
+                <td className="text-left align-middle">
+                  <h4>{this.state.gameSettings.question.anwsers[1].text}</h4>
+                </td>
+                <td className="text-left align-middle">
+                  <h4>
+                    {(
+                      (this.state.gameSettings.question.anwsers[1].votes *
+                        100) /
+                      this.state.gameSettings.question.totalVotes
+                    ).toFixed(1)}
+                    %
+                  </h4>
                 </td>
               </tr>
               <tr>
-                <td>
-                  <img src={img3} width="45vw" alt="img1" />
+                <td className="text-center align-middle">
+                  <img
+                    src={this.state.gameSettings.question.anwsers[2].img_emoji}
+                    width="45vw"
+                    alt="img1"
+                  />
                 </td>
-                <td className="text-left">
-                  <h3>Um macaco entra na tela</h3>
+                <td className="text-left align-middle">
+                  <h4>{this.state.gameSettings.question.anwsers[2].text}</h4>
                 </td>
-                <td>
-                  <img src={img4} width="45vw" alt="img1" />
+                <td className="text-left align-middle">
+                  <h4>
+                    {(
+                      (this.state.gameSettings.question.anwsers[2].votes *
+                        100) /
+                      this.state.gameSettings.question.totalVotes
+                    ).toFixed(1)}
+                    %
+                  </h4>
                 </td>
-                <td className="text-left">
-                  <h3>O Guinas cai de um prédio bem alto</h3>
+                <td className="text-center align-middle">
+                  <img
+                    src={this.state.gameSettings.question.anwsers[3].img_emoji}
+                    width="45vw"
+                    alt="img1"
+                  />
+                </td>
+                <td className="text-left align-middle">
+                  <h4>{this.state.gameSettings.question.anwsers[3].text}</h4>
+                </td>
+                <td className="text-left align-middle">
+                  <h4>
+                    {(
+                      (this.state.gameSettings.question.anwsers[3].votes *
+                        100) /
+                      this.state.gameSettings.question.totalVotes
+                    ).toFixed(1)}
+                    %
+                  </h4>
                 </td>
               </tr>
             </tbody>
