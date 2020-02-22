@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 import SocketContext from "./SocketContext";
+import trophy from "./../img/trophy.gif";
 
 export default class ModalWinner extends Component {
   constructor(props) {
     super(props);
     this.state = {
       gameSettings: this.props.gameSettings,
-      showModal: false
+      showModal: false,
+      buttonDisabled: true
     };
     this.close = this.close.bind(this);
     this.open = this.open.bind(this);
@@ -81,12 +83,15 @@ export default class ModalWinner extends Component {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              Resultado da rodada {this.state.gameSettings.round}
+              <div className="text-center">
+                Resultado da rodada {this.state.gameSettings.round}
+              </div>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <br />
-            <div className="justify-content-md-center">
+            <div className="text-center">
+              <img src={trophy} width="400vw" alt="VS" />
+              <br />
               <h1>{this.whoIsWinner()}</h1>
             </div>
           </Modal.Body>

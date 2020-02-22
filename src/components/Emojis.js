@@ -1,0 +1,37 @@
+// images.js
+let emojis = {
+  "👾": "alien-monster",
+  "💣": "bomb",
+  "🤡": "clown-face",
+  "💨": "dash-symbol",
+  "👽": "extraterrestrial-alien",
+  "😱": "face-screaming-in-fear",
+  "🤠": "face-with-cowboy-hat",
+  "🥶": "freezing-face",
+  "⭐": "white-medium-star",
+  "🤩": "grinning-face-with-star-eyes",
+  "💥": "collision-symbol",
+  "🤗": "hugging-face",
+  "💯": "hundred-points-symbol",
+  "👺": "japanese-goblin",
+  "👹": "japanese-ogre",
+  "💌": "love-letter",
+  "🤢": "nauseated-face",
+  "💩": "pile-of-poo",
+  "🤖": "robot-face",
+  "🤬": "serious-face-with-symbols-covering-mouth",
+  "☠️": "skull-and-crossbones",
+  "💀": "skull",
+  "😇": "smiling-face-with-halo",
+  "😈": "smiling-face-with-horns",
+  "🙊": "speak-no-evil-monkey",
+  "💦": "splashing-sweat-symbol",
+  "🤔": "thinking-face",
+  "🦷": "tooth",
+  "🙃": "upside-down-face",
+  "👋": "waving-hand-sign",
+  "🅱️": "negative-squared-latin-capital-letter",
+  "🚨": "police-cars-revolving-light"
+};
+
+export default emojis;

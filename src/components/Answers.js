@@ -4,6 +4,7 @@ import ModalWinner from "./ModalWinner.js";
 import StartRound from "./StartRound.js";
 import { Table, Container, Row, Col, Button } from "react-bootstrap";
 import SocketContext from "./SocketContext";
+import Emojis from "./Emojis";
 
 export default class Answers extends Component {
   constructor(props) {
@@ -21,16 +22,34 @@ export default class Answers extends Component {
     //console.log(this.state.gameSettings);
     //console.log(data.gameSettings);
     if (this.state.gameSettings.question.id !== data.gameSettings.question.id) {
-      //console.log(data);
+      console.log(data);
       this.setState({
         gameSettings: data.gameSettings
       });
+      let playButton = null;
+      if (data.gameSettings.question.isPlay === false) {
+        playButton = {
+          title: "Play",
+          variant: "outline-primary"
+        };
+      } else {
+        playButton = {
+          title: "Pause",
+          variant: "outline-warning"
+        };
+      }
+      this.setState({
+        playButton: playButton
+      });
     }
   }
+  url_emoji(emoji) {
+    let img = "img/emojis/" + Emojis[emoji] + ".png";
+    return img;
+  }
   pause() {
-    this.state.socket.emit("pause-play");
     let playButton = null;
-    if (this.state.playButton.title === "Pause") {
+    if (!this.state.gameSettings.question.isPlay === false) {
       playButton = {
         title: "Play",
         variant: "outline-primary"
@@ -44,6 +63,7 @@ export default class Answers extends Component {
     this.setState({
       playButton: playButton
     });
+    this.state.socket.emit("pause-play");
   }
   render() {
     if (this.state.gameSettings.question.isActive) {
@@ -69,9 +89,9 @@ export default class Answers extends Component {
                   <tr>
                     <td className="text-center align-middle">
                       <img
-                        src={
-                          this.state.gameSettings.question.answers[0].img_emoji
-                        }
+                        src={this.url_emoji(
+                          this.state.gameSettings.question.answers[0].emoji
+                        )}
                         width="45vw"
                         alt="img1"
                       />
@@ -96,9 +116,9 @@ export default class Answers extends Component {
                     </td>
                     <td className="text-center align-middle">
                       <img
-                        src={
-                          this.state.gameSettings.question.answers[1].img_emoji
-                        }
+                        src={this.url_emoji(
+                          this.state.gameSettings.question.answers[1].emoji
+                        )}
                         width="45vw"
                         alt="img1"
                       />
@@ -125,9 +145,9 @@ export default class Answers extends Component {
                   <tr>
                     <td className="text-center align-middle">
                       <img
-                        src={
-                          this.state.gameSettings.question.answers[2].img_emoji
-                        }
+                        src={this.url_emoji(
+                          this.state.gameSettings.question.answers[2].emoji
+                        )}
                         width="45vw"
                         alt="img1"
                       />
@@ -152,9 +172,9 @@ export default class Answers extends Component {
                     </td>
                     <td className="text-center align-middle">
                       <img
-                        src={
-                          this.state.gameSettings.question.answers[3].img_emoji
-                        }
+                        src={this.url_emoji(
+                          this.state.gameSettings.question.answers[3].emoji
+                        )}
                         width="45vw"
                         alt="img1"
                       />

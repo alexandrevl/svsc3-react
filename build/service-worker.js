@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/streamervschat/precache-manifest.6b4686eaf1feffeeab88dc8bbbc4121f.js"
+  "/streamervschat/precache-manifest.09755ca9109e13d84f2a9559023096f1.js"
 );
 
 self.addEventListener('message', (event) => {
