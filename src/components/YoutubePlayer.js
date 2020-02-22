@@ -5,9 +5,20 @@ export default class YoutubePlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: this.props.src
+      gameSettings: this.props.gameSettings
     };
   }
+  componentWillUpdate(data) {
+    //console.log(this.state.gameSettings);
+    //console.log(data.gameSettings);
+    if (this.state.gameSettings.question.id !== data.gameSettings.question.id) {
+      //console.log(data);
+      this.setState({
+        gameSettings: data.gameSettings
+      });
+    }
+  }
+
   render() {
     const opts = {
       height: "390",
@@ -19,7 +30,11 @@ export default class YoutubePlayer extends Component {
       }
     };
     return (
-      <YouTube videoId={this.state.src} opts={opts} onReady={this._onReady} />
+      <YouTube
+        videoId={this.state.gameSettings.question.idVideo}
+        opts={opts}
+        onReady={this._onReady}
+      />
     );
   }
 }

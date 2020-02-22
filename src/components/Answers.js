@@ -1,126 +1,210 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Table, Container, Row } from "react-bootstrap";
+import ModalWinner from "./ModalWinner.js";
+import StartRound from "./StartRound.js";
+import { Table, Container, Row, Col, Button } from "react-bootstrap";
+import SocketContext from "./SocketContext";
 
 export default class Answers extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gameSettings: this.props.gameSettings
+      gameSettings: this.props.gameSettings,
+      playButton: {
+        title: "Pause",
+        variant: "outline-warning"
+      }
     };
+    this.pause = this.pause.bind(this);
   }
-  componentDidUpdate(data) {
-    if (
-      this.state.gameSettings.question.totalVotes !==
-      data.gameSettings.question.totalVotes
-    ) {
-      console.log(data);
+  componentWillUpdate(data) {
+    //console.log(this.state.gameSettings);
+    //console.log(data.gameSettings);
+    if (this.state.gameSettings.question.id !== data.gameSettings.question.id) {
+      //console.log(data);
       this.setState({
         gameSettings: data.gameSettings
       });
     }
   }
-
+  pause() {
+    this.state.socket.emit("pause-play");
+    let playButton = null;
+    if (this.state.playButton.title === "Pause") {
+      playButton = {
+        title: "Play",
+        variant: "outline-primary"
+      };
+    } else {
+      playButton = {
+        title: "Pause",
+        variant: "outline-warning"
+      };
+    }
+    this.setState({
+      playButton: playButton
+    });
+  }
   render() {
-    return (
-      <Container>
-        <Row className="justify-content-md-center">
-          <h4>
-            {this.state.gameSettings.question.title} (
-            {this.state.gameSettings.question.totalVotes})
-          </h4>
-        </Row>
-        <Row className="justify-content-md-center">
-          <Table striped bordered hover variant="dark">
-            <tbody>
-              <tr>
-                <td className="text-center align-middle">
-                  <img
-                    src={this.state.gameSettings.question.anwsers[0].img_emoji}
-                    width="45vw"
-                    alt="img1"
-                  />
-                </td>
-                <td className="text-left align-middle">
-                  <h4>{this.state.gameSettings.question.anwsers[0].text}</h4>
-                </td>
-                <td className="text-left align-middle">
-                  <h4>
-                    {(
-                      (this.state.gameSettings.question.anwsers[0].votes *
-                        100) /
-                      this.state.gameSettings.question.totalVotes
-                    ).toFixed(1)}
-                    %
-                  </h4>
-                </td>
-                <td className="text-center align-middle">
-                  <img
-                    src={this.state.gameSettings.question.anwsers[1].img_emoji}
-                    width="45vw"
-                    alt="img1"
-                  />
-                </td>
-                <td className="text-left align-middle">
-                  <h4>{this.state.gameSettings.question.anwsers[1].text}</h4>
-                </td>
-                <td className="text-left align-middle">
-                  <h4>
-                    {(
-                      (this.state.gameSettings.question.anwsers[1].votes *
-                        100) /
-                      this.state.gameSettings.question.totalVotes
-                    ).toFixed(1)}
-                    %
-                  </h4>
-                </td>
-              </tr>
-              <tr>
-                <td className="text-center align-middle">
-                  <img
-                    src={this.state.gameSettings.question.anwsers[2].img_emoji}
-                    width="45vw"
-                    alt="img1"
-                  />
-                </td>
-                <td className="text-left align-middle">
-                  <h4>{this.state.gameSettings.question.anwsers[2].text}</h4>
-                </td>
-                <td className="text-left align-middle">
-                  <h4>
-                    {(
-                      (this.state.gameSettings.question.anwsers[2].votes *
-                        100) /
-                      this.state.gameSettings.question.totalVotes
-                    ).toFixed(1)}
-                    %
-                  </h4>
-                </td>
-                <td className="text-center align-middle">
-                  <img
-                    src={this.state.gameSettings.question.anwsers[3].img_emoji}
-                    width="45vw"
-                    alt="img1"
-                  />
-                </td>
-                <td className="text-left align-middle">
-                  <h4>{this.state.gameSettings.question.anwsers[3].text}</h4>
-                </td>
-                <td className="text-left align-middle">
-                  <h4>
-                    {(
-                      (this.state.gameSettings.question.anwsers[3].votes *
-                        100) /
-                      this.state.gameSettings.question.totalVotes
-                    ).toFixed(1)}
-                    %
-                  </h4>
-                </td>
-              </tr>
-            </tbody>
-          </Table>
-        </Row>
-      </Container>
-    );
+    if (this.state.gameSettings.question.isActive) {
+      return (
+        <div>
+          <SocketContext.Consumer>
+            {socket => {
+              if (this.state.socket !== socket) {
+                this.setState({ socket: socket });
+              }
+            }}
+          </SocketContext.Consumer>
+          <Container>
+            <Row className="justify-content-md-center">
+              <h4>
+                {this.state.gameSettings.question.title} (
+                {this.state.gameSettings.question.totalVotes})
+              </h4>
+            </Row>
+            <Row className="justify-content-md-center">
+              <Table striped bordered hover variant="dark">
+                <tbody>
+                  <tr>
+                    <td className="text-center align-middle">
+                      <img
+                        src={
+                          this.state.gameSettings.question.answers[0].img_emoji
+                        }
+                        width="45vw"
+                        alt="img1"
+                      />
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[0].text}
+                      </h4>
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[0].votes > 0
+                          ? (
+                              (this.state.gameSettings.question.answers[0]
+                                .votes *
+                                100) /
+                              this.state.gameSettings.question.totalVotes
+                            ).toFixed(1)
+                          : 0}
+                        %
+                      </h4>
+                    </td>
+                    <td className="text-center align-middle">
+                      <img
+                        src={
+                          this.state.gameSettings.question.answers[1].img_emoji
+                        }
+                        width="45vw"
+                        alt="img1"
+                      />
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[1].text}
+                      </h4>
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[1].votes > 0
+                          ? (
+                              (this.state.gameSettings.question.answers[1]
+                                .votes *
+                                100) /
+                              this.state.gameSettings.question.totalVotes
+                            ).toFixed(1)
+                          : 0}
+                        %
+                      </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="text-center align-middle">
+                      <img
+                        src={
+                          this.state.gameSettings.question.answers[2].img_emoji
+                        }
+                        width="45vw"
+                        alt="img1"
+                      />
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[2].text}
+                      </h4>
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[2].votes > 0
+                          ? (
+                              (this.state.gameSettings.question.answers[2]
+                                .votes *
+                                100) /
+                              this.state.gameSettings.question.totalVotes
+                            ).toFixed(1)
+                          : 0}
+                        %
+                      </h4>
+                    </td>
+                    <td className="text-center align-middle">
+                      <img
+                        src={
+                          this.state.gameSettings.question.answers[3].img_emoji
+                        }
+                        width="45vw"
+                        alt="img1"
+                      />
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[3].text}
+                      </h4>
+                    </td>
+                    <td className="text-left align-middle">
+                      <h4>
+                        {this.state.gameSettings.question.answers[3].votes > 0
+                          ? (
+                              (this.state.gameSettings.question.answers[3]
+                                .votes *
+                                100) /
+                              this.state.gameSettings.question.totalVotes
+                            ).toFixed(1)
+                          : 0}
+                        %
+                      </h4>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+            </Row>
+            <br />
+            <br />
+            <Row className="justify-content-md-center">
+              <Col xs lg="6" className="text-center">
+                <Button
+                  variant={this.state.playButton.variant}
+                  onClick={this.pause}
+                >
+                  {this.state.playButton.title}
+                </Button>
+              </Col>
+              <Col xs lg="6" className="text-center">
+                <ModalWinner gameSettings={this.state.gameSettings} />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <StartRound gameSettings={this.state.gameSettings} />
+        </div>
+      );
+    }
   }
 }
