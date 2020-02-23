@@ -27,7 +27,7 @@ let emojis = {
   "🙊": "speak-no-evil-monkey",
   "💦": "splashing-sweat-symbol",
   "🤔": "thinking-face",
-  "🦷": "tooth",
+  "💄": "lipstick",
   "🙃": "upside-down-face",
   "👋": "waving-hand-sign",
   "🅱️": "negative-squared-latin-capital-letter",

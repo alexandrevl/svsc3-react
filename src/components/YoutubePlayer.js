@@ -20,7 +20,11 @@ export default class YoutubePlayer extends Component {
       });
     }
   }
-
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    //event.target.pauseVideo();
+    //console.log(event.target.getCurrentTime());
+  }
   render() {
     const opts = {
       height: "450",
