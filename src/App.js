@@ -24,9 +24,26 @@ export default function App() {
   const [youtubeOff, setYoutubeOff] = useState(false);
 
   useEffect(() => {
-    const socket = socketIOClient(
-      "http://" + window.location.hostname + ":21211"
-    );
+    let idLive = window.location.pathname.split("/")[2];
+    console.log(window.location);
+
+    let url =
+      window.location.protocol +
+      "//" +
+      window.location.hostname +
+      ":21227?idLive=" +
+      idLive +
+      "&now=" +
+      Date.now();
+    console.log(url);
+    const socket = socketIOClient(url);
+    // const socket = socketIOClient(
+    //   window.location.protocol +
+    //     window.location.hostname +
+    //     ":21211!?idLive=" +
+    //     idLive
+    // );
+    setYoutubeOff(true);
     setSocket(socket);
     socket.on("gameSettings", gameSettings => {
       console.log(gameSettings);
@@ -37,10 +54,6 @@ export default function App() {
       setYoutubeOff(true);
       setIsReady(false);
     });
-    let idLive = window.location.pathname.split("/")[2];
-    if (idLive) {
-      socket.emit("idLive", idLive);
-    }
   }, []);
 
   function notWorking() {
