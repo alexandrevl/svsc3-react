@@ -31,7 +31,7 @@ export default function App() {
       window.location.protocol +
       "//" +
       window.location.hostname +
-      ":21227?idLive=" +
+      ":21211?idLive=" +
       idLive +
       "&now=" +
       Date.now();

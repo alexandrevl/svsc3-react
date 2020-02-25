@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/streamervschat/static/css/main.cbf3b124.chunk.css",
-    "main.js": "/streamervschat/static/js/main.8ebe4ab0.chunk.js",
-    "main.js.map": "/streamervschat/static/js/main.8ebe4ab0.chunk.js.map",
+    "main.css": "/streamervschat/static/css/main.b6ba7ab8.chunk.css",
+    "main.js": "/streamervschat/static/js/main.05f28cf3.chunk.js",
+    "main.js.map": "/streamervschat/static/js/main.05f28cf3.chunk.js.map",
     "runtime-main.js": "/streamervschat/static/js/runtime-main.b9dadfed.js",
     "runtime-main.js.map": "/streamervschat/static/js/runtime-main.b9dadfed.js.map",
     "static/css/2.47e06e2e.chunk.css": "/streamervschat/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.e771e5c9.chunk.js": "/streamervschat/static/js/2.e771e5c9.chunk.js",
-    "static/js/2.e771e5c9.chunk.js.map": "/streamervschat/static/js/2.e771e5c9.chunk.js.map",
+    "static/js/2.357397f0.chunk.js": "/streamervschat/static/js/2.357397f0.chunk.js",
+    "static/js/2.357397f0.chunk.js.map": "/streamervschat/static/js/2.357397f0.chunk.js.map",
     "index.html": "/streamervschat/index.html",
-    "precache-manifest.09755ca9109e13d84f2a9559023096f1.js": "/streamervschat/precache-manifest.09755ca9109e13d84f2a9559023096f1.js",
+    "precache-manifest.591965dda964b083dbe3bf0218a9bc65.js": "/streamervschat/precache-manifest.591965dda964b083dbe3bf0218a9bc65.js",
     "service-worker.js": "/streamervschat/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/streamervschat/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.cbf3b124.chunk.css.map": "/streamervschat/static/css/main.cbf3b124.chunk.css.map",
-    "static/js/2.e771e5c9.chunk.js.LICENSE.txt": "/streamervschat/static/js/2.e771e5c9.chunk.js.LICENSE.txt",
+    "static/css/main.b6ba7ab8.chunk.css.map": "/streamervschat/static/css/main.b6ba7ab8.chunk.css.map",
+    "static/js/2.357397f0.chunk.js.LICENSE.txt": "/streamervschat/static/js/2.357397f0.chunk.js.LICENSE.txt",
     "static/media/trophy.gif": "/streamervschat/static/media/trophy.d9db92ab.gif",
     "static/media/victory.gif": "/streamervschat/static/media/victory.59d065af.gif",
     "static/media/vs.png": "/streamervschat/static/media/vs.2433496f.png"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.b9dadfed.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.e771e5c9.chunk.js",
-    "static/css/main.cbf3b124.chunk.css",
-    "static/js/main.8ebe4ab0.chunk.js"
+    "static/js/2.357397f0.chunk.js",
+    "static/css/main.b6ba7ab8.chunk.css",
+    "static/js/main.05f28cf3.chunk.js"
   ]
 }
