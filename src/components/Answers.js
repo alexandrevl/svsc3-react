@@ -4,8 +4,8 @@ import ModalWinner from "./ModalWinner.js";
 import StartRound from "./StartRound.js";
 import { Table, Container, Row, Col, Button } from "react-bootstrap";
 import SocketContext from "./SocketContext";
-import GameContext from "./GameContext.js";
 import Emojis from "./Emojis";
+import GameContext from "./GameContext.js";
 
 export default function Answers() {
   const gameSettings = useContext(GameContext);
