@@ -60,11 +60,7 @@ export default function App() {
 
   function notWorking() {
     if (youtubeOff) {
-      return (
-        "Utilize http://" +
-        window.location.hostname +
-        "/streamervschat/IDLIVEYOUTUBE"
-      );
+      return "Utilize http://" + window.location.hostname + "/IDLIVEYOUTUBE";
     } else {
       return "Carregando...";
     }
