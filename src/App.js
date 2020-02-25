@@ -24,7 +24,7 @@ export default function App() {
   const [youtubeOff, setYoutubeOff] = useState(false);
 
   useEffect(() => {
-    let idLive = window.location.pathname.split("/")[2];
+    let idLive = window.location.pathname.split("/")[1];
     console.log(window.location);
 
     let url = "http://localhost:21227?idLive=" + idLive + "&now=" + Date.now();
