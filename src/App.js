@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import YoutubePlayer from "./components/YoutubePlayer.js";
+import Media from "./components/Media.js";
 import Answers from "./components/Answers.js";
 import socketIOClient from "socket.io-client";
 import { Container, Row, Col } from "react-bootstrap";
@@ -12,13 +12,6 @@ import victory from "./img/victory.gif";
 
 export default function App() {
   const [socket, setSocket] = useState(null);
-  const [styleYT] = useState({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "..",
-    height: ".."
-  });
   const [gameSettings, setGameSettings] = useState(null);
   const [isReady, setIsReady] = useState(false);
   const [youtubeOff, setYoutubeOff] = useState(false);
@@ -106,17 +99,14 @@ export default function App() {
               <Container fluid>
                 <Row className="justify-content-md-center">
                   <Col>
-                    <YoutubePlayer
-                      gameSettings={gameSettings}
-                      style={styleYT}
-                    />
+                    <Media />
                   </Col>
                 </Row>
                 <br />
                 <br />
                 <Row className="justify-content-md-center">
                   <Col>
-                    <Answers gameSettings={gameSettings} />
+                    <Answers />
                   </Col>
                 </Row>
               </Container>
