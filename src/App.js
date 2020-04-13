@@ -20,16 +20,18 @@ export default function App() {
     let idLive = window.location.pathname.split("/")[1];
     console.log(window.location);
 
-    let url = "http://localhost:21211?idLive=" + idLive + "&now=" + Date.now();
-    if (window.location.hostname.includes("mrguinas")) {
-      url =
-        window.location.protocol +
-        "//mrguinas.com.br" +
-        ":21211?idLive=" +
-        idLive +
-        "&now=" +
-        Date.now();
-    }
+    //let url = "http://localhost:21211?idLive=" + idLive + "&now=" + Date.now();
+    let url =
+      "http://multistreamer.xyz?idLive=" + idLive + "&now=" + Date.now();
+    // if (window.location.hostname.includes("mrguinas")) {
+    //   url =
+    //     window.location.protocol +
+    //     "//mrguinas.com.br" +
+    //     ":21211?idLive=" +
+    //     idLive +
+    //     "&now=" +
+    //     Date.now();
+    // }
     console.log(url);
     const socket = socketIOClient(url);
     // const socket = socketIOClient(
