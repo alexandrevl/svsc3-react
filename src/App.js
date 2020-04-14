@@ -22,7 +22,7 @@ export default function App() {
 
     //let url = "http://localhost:21211?idLive=" + idLive + "&now=" + Date.now();
     let url =
-      "http://multistreamer.xyz?idLive=" + idLive + "&now=" + Date.now();
+      "https://multistreamer.xyz:21211?idLive=" + idLive + "&now=" + Date.now();
     // if (window.location.hostname.includes("mrguinas")) {
     //   url =
     //     window.location.protocol +
