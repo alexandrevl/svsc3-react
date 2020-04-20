@@ -24,7 +24,10 @@ export default function LifeBar() {
               <ProgressBar style={{ height: 30 + "px" }}>
                 <ProgressBar
                   variant="danger"
-                  now={100 - gameSettings.lifeBar.lifeStreamer}
+                  now={
+                    gameSettings.lifeBar.LIFE_STREAMER -
+                    gameSettings.lifeBar.lifeStreamer
+                  }
                   key={1}
                 />
                 <ProgressBar
@@ -46,7 +49,10 @@ export default function LifeBar() {
                 />
                 <ProgressBar
                   variant="danger"
-                  now={100 - gameSettings.lifeBar.lifeChat}
+                  now={
+                    gameSettings.lifeBar.LIFE_CHAT -
+                    gameSettings.lifeBar.lifeChat
+                  }
                   key={2}
                 />
               </ProgressBar>
