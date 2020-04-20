@@ -33,7 +33,7 @@ export default function Answers() {
   }, [gameSettings]);
 
   function url_emoji(emoji) {
-    let img = "img/emojis/" + Emojis[emoji] + ".png";
+    let img = "img/emojis/" + Emojis[emoji];
     return img;
   }
   function pause() {
