@@ -30,7 +30,7 @@ export default function App() {
     //     "&now=" +
     //     Date.now();
     // }
-    //url = "https://localhost:21211?idLive=" + idLive;
+    url = "https://localhost:21211?idLive=" + idLive;
     console.log(url);
     const socket = socketIOClient(url);
     // const socket = socketIOClient(
@@ -60,7 +60,7 @@ export default function App() {
     }
   }
   function winner() {
-    return "O " + this.state.gameSettings.winner + " VENCEU";
+    return "O " + gameSettings.winner + " VENCEU";
   }
 
   if (isReady) {
@@ -99,9 +99,9 @@ export default function App() {
               <LifeBar gameSettings={gameSettings} />
               <Container fluid>
                 <Row className="justify-content-md-center">
-                  <Col>
+                  {/* <Col>
                     <Media />
-                  </Col>
+                  </Col> */}
                 </Row>
                 <br />
                 <br />

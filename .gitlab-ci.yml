@@ -9,4 +9,4 @@ deploy:
     - chmod 700 ~/.ssh
     - ssh-keyscan -t rsa 162.241.61.38 >> ~/.ssh/known_hosts
   script:
-    - ssh -o StrictHostKeyChecking=no mrguin98@162.241.61.38 "cd public_html/svsc; git pull"
+    - ssh -o StrictHostKeyChecking=no mrguin98@162.241.61.38 "cd public_html/svsc2; git pull"
