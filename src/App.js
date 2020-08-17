@@ -30,7 +30,7 @@ export default function App() {
     //     "&now=" +
     //     Date.now();
     // }
-    url = "https://localhost:21211?idLive=" + idLive;
+    // url = "https://localhost:21211?idLive=" + idLive;
     console.log(url);
     const socket = socketIOClient(url);
     // const socket = socketIOClient(
