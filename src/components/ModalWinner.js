@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Modal, Button, Row, Container, Col } from "react-bootstrap";
+import { Modal, Row, Container, Col } from "react-bootstrap";
 import GameContext from "./GameContext.js";
 import vsImg from "./../img/vs.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -93,28 +93,32 @@ export default function ModalWinner() {
             <br />
             <Row className="justify-content-md-center">
               <Col xs lg="4" className="text-center">
-                <h4>Streamer</h4>
-                <br />
+                <h3>Streamer</h3>
                 <br />
                 {iconResultStreamer}
-              </Col>
-              <Col xs lg="4" className="text-center">
-                <img src={vsImg} width="150vw" alt="VS" />
-              </Col>
-              <Col xs lg="4" className="text-center">
-                <h4>Chat</h4>
                 <br />
+                <br />
+              </Col>
+              <Col xs lg="4" className="text-center">
+                <br />
+                <br />
+                <img src={vsImg} width="130vw" alt="VS" />
+              </Col>
+              <Col xs lg="4" className="text-center">
+                <h3>Chat</h3>
                 <br />
                 {iconResultChat}
+                <br />
+                <br />
               </Col>
             </Row>
           </Container>
         </Modal.Body>
-        <Modal.Footer>
+        {/* <Modal.Footer>
           <Button variant="success" onClick={close}>
             Próxima Rodada
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );
