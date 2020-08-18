@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Media from "./components/Media.js";
+// import Media from "./components/Media.js";
 import Answers from "./components/Answers.js";
+import ModalWinner from "./components/ModalWinner.js";
 import socketIOClient from "socket.io-client";
 import { Container, Row, Col } from "react-bootstrap";
 import SocketContext from "./components/SocketContext.js";
@@ -75,7 +76,7 @@ export default function App() {
               <Container fluid>
                 <Row className="justify-content-md-center">
                   <Col>
-                    <img src={victory} width="600vw" alt="VS" />
+                    <img src={victory} width="500vw" alt="VS" />
                   </Col>
                 </Row>
                 <br />
@@ -87,6 +88,7 @@ export default function App() {
                   </Col>
                 </Row>
               </Container>
+              <ModalWinner />
             </SocketContext.Provider>
           </GameContext.Provider>
         </div>
@@ -111,6 +113,7 @@ export default function App() {
                   </Col>
                 </Row>
               </Container>
+              <ModalWinner />
             </SocketContext.Provider>
           </GameContext.Provider>
         </div>

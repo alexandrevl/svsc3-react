@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Modal, Button } from "react-bootstrap";
-import SocketContext from "./SocketContext";
+import { Modal, Button, Row, Container, Col } from "react-bootstrap";
 import GameContext from "./GameContext.js";
-import trophy from "./../img/trophy.gif";
+import vsImg from "./../img/vs.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default function ModalWinner() {
   // constructor(props) {
@@ -18,10 +19,39 @@ export default function ModalWinner() {
   //   .whoIsWinner = .whoIsWinner.bind();
   // }
   const gameSettings = useContext(GameContext);
-  const socket = useContext(SocketContext);
+  // const socket = useContext(SocketContext);
   const [showModal, setShowModal] = useState(false);
+  const [correctAnswer, setCorrectAnswer] = useState(false);
+  const [iconResultChat, setIconResultChat] = useState(
+    <FontAwesomeIcon icon={faTimes} color="red" size="9x" />
+  );
+  const [iconResultStreamer, setIconResultStreamer] = useState(
+    <FontAwesomeIcon icon={faTimes} color="red" size="9x" />
+  );
 
-  useEffect(() => {}, [gameSettings]);
+  useEffect(() => {
+    // console.log(gameSettings);
+    if (gameSettings.isPopup) {
+      open();
+    }
+    gameSettings.oldQuestion.answers.forEach(answer => {
+      if (answer.isCorrect) {
+        setCorrectAnswer(answer.text);
+      }
+    });
+    console.log(gameSettings.oldQuestion);
+    if (gameSettings.oldQuestion.isStreamerWinner) {
+      console.log("OI");
+      setIconResultStreamer(
+        <FontAwesomeIcon icon={faCheckCircle} color="green" size="9x" />
+      );
+    }
+    if (gameSettings.oldQuestion.isChatWinner) {
+      setIconResultChat(
+        <FontAwesomeIcon icon={faCheckCircle} color="green" size="9x" />
+      );
+    }
+  }, [gameSettings]);
 
   function close() {
     setShowModal(false);
@@ -30,62 +60,58 @@ export default function ModalWinner() {
   function open() {
     setShowModal(true);
   }
-  function nextRound() {
-    if (
-      !gameSettings.question.isStreamerWinner &&
-      !gameSettings.question.isChatWinner
-    ) {
-    } else {
-      close();
-      socket.emit("nextQuestion");
-    }
-  }
-
-  function whoIsWinner() {
-    if (
-      !gameSettings.question.isStreamerWinner &&
-      !gameSettings.question.isChatWinner
-    ) {
-      return "Ainda ninguém";
-    } else {
-      if (gameSettings.question.isStreamerWinner) {
-        return "Streamer VENCEU";
-      }
-      if (gameSettings.question.isChatWinner) {
-        return "Chat VENCEU";
-      }
-    }
-  }
 
   return (
     <div>
-      <Button variant="outline-primary" onClick={open}>
+      {/* <Button variant="outline-primary" onClick={open}>
         RESULTADO
-      </Button>
+      </Button> */}
       <Modal
         show={showModal}
         onHide={close}
         animation={false}
-        size="md"
+        size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             <div className="text-center">
-              Resultado da rodada {gameSettings.round}
+              Resultado da rodada {gameSettings.round - 1}
             </div>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="text-center">
-            <img src={trophy} width="400vw" alt="VS" />
+          <Container>
+            <Row className="justify-content-md-center">
+              <h6>{gameSettings.oldQuestion.title}</h6>
+            </Row>
+            <Row className="justify-content-md-center">
+              <h4>Resposta: {correctAnswer}</h4>
+            </Row>
             <br />
-            <h1>{whoIsWinner()}</h1>
-          </div>
+            <br />
+            <Row className="justify-content-md-center">
+              <Col xs lg="4" className="text-center">
+                <h4>Streamer</h4>
+                <br />
+                <br />
+                {iconResultStreamer}
+              </Col>
+              <Col xs lg="4" className="text-center">
+                <img src={vsImg} width="150vw" alt="VS" />
+              </Col>
+              <Col xs lg="4" className="text-center">
+                <h4>Chat</h4>
+                <br />
+                <br />
+                {iconResultChat}
+              </Col>
+            </Row>
+          </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="success" onClick={nextRound}>
+          <Button variant="success" onClick={close}>
             Próxima Rodada
           </Button>
         </Modal.Footer>

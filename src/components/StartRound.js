@@ -15,6 +15,13 @@ export default function StartRound() {
       <Container>
         <Row className="justify-content-md-center">
           <Col xs lg="12" className="text-center">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <Button variant="success" size="lg" onClick={startRound}>
               Iniciar rodada
             </Button>
