@@ -25,7 +25,7 @@ export default function Sounds() {
     }
   }
   useEffect(() => {
-    let randomTrilha = getRandomInt(1, 4);
+    let randomTrilha = getRandomInt(1, 12);
     switch (randomTrilha) {
       case 1:
         setAudioTrilha(trilha1);
