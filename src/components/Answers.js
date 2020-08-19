@@ -4,6 +4,8 @@ import StartRound from "./StartRound.js";
 import { Table, Container, Row, Button } from "react-bootstrap";
 import SocketContext from "./SocketContext";
 import Emojis from "./Emojis";
+import Sounds from "./Sounds";
+
 import GameContext from "./GameContext.js";
 
 export default function Answers() {
@@ -20,11 +22,13 @@ export default function Answers() {
     // console.log("PQQQQQ", answerStreamer);
     socket.emit("nextQuestion", answerStreamer);
   }
+
   if (gameSettings.question.isActive) {
     return (
       <div>
         <GameContext.Provider value={gameSettings}>
           <Container>
+            <Sounds />
             <Row className="justify-content-md-center">
               <h2>
                 {gameSettings.question.title} (

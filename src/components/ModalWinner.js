@@ -4,6 +4,7 @@ import GameContext from "./GameContext.js";
 import vsImg from "./../img/vs.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimes } from "@fortawesome/free-solid-svg-icons";
+import tada from "./../sounds/tada.mp3";
 
 export default function ModalWinner() {
   // constructor(props) {
@@ -41,14 +42,25 @@ export default function ModalWinner() {
     });
     console.log(gameSettings.oldQuestion);
     if (gameSettings.oldQuestion.isStreamerWinner) {
-      console.log("OI");
+      // console.log("Streamer Winner");
       setIconResultStreamer(
         <FontAwesomeIcon icon={faCheckCircle} color="green" size="9x" />
       );
+    } else {
+      // console.log("Streamer Loser");
+      setIconResultStreamer(
+        <FontAwesomeIcon icon={faTimes} color="red" size="9x" />
+      );
     }
     if (gameSettings.oldQuestion.isChatWinner) {
+      // console.log("Chat Winner");
       setIconResultChat(
         <FontAwesomeIcon icon={faCheckCircle} color="green" size="9x" />
+      );
+    } else {
+      // console.log("Chat Loser");
+      setIconResultChat(
+        <FontAwesomeIcon icon={faTimes} color="red" size="9x" />
       );
     }
   }, [gameSettings]);
@@ -113,6 +125,7 @@ export default function ModalWinner() {
               </Col>
             </Row>
           </Container>
+          <audio src={tada} volume="0.8" autoPlay />
         </Modal.Body>
         {/* <Modal.Footer>
           <Button variant="success" onClick={close}>

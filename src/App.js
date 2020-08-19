@@ -20,17 +20,17 @@ export default function App() {
   useEffect(() => {
     let idLive = window.location.pathname.split("/")[1];
     console.log(window.location);
-
-    let url = "https://multistreamer.xyz:21211?idLive=" + idLive;
-    // if (window.location.hostname.includes("mrguinas")) {
-    //   url =
-    //     window.location.protocol +
-    //     "//mrguinas.com.br" +
-    //     ":21211?idLive=" +
-    //     idLive +
-    //     "&now=" +
-    //     Date.now();
-    // }
+    let url = "https://localhost:21211?idLive=" + idLive;
+    // let url = "https://multistreamer.xyz:21211?idLive=" + idLive;
+    if (window.location.hostname.includes("mrguinas")) {
+      url =
+        window.location.protocol +
+        "//multistreamer.xyz" +
+        ":21211?idLive=" +
+        idLive +
+        "&now=" +
+        Date.now();
+    }
     // url = "https://localhost:21211?idLive=" + idLive;
     console.log(url);
     const socket = socketIOClient(url);
