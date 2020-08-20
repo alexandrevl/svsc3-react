@@ -89,6 +89,9 @@ export default function StartRound() {
       case 32:
         setTextCategory("Desenhos e animações");
         break;
+      case 27:
+        setTextCategory("Animais");
+        break;
 
       default:
         break;

@@ -166,12 +166,6 @@ export default function Answers() {
             </Row>
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <Jokes />
             <br />
             <br />
