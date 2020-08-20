@@ -170,112 +170,112 @@ export default function StartRound() {
                       changeCategory(11);
                     }}
                   >
-                    >Filmes
+                    Filmes
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(12);
                     }}
                   >
-                    >Música
+                    Música
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(14);
                     }}
                   >
-                    >Televisão
+                    Televisão
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(19);
                     }}
                   >
-                    >Matemática
+                    Matemática
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(20);
                     }}
                   >
-                    >Mitologia
+                    Mitologia
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(21);
                     }}
                   >
-                    >Esportes
+                    Esportes
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(22);
                     }}
                   >
-                    >Geografia
+                    Geografia
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(23);
                     }}
                   >
-                    >História
+                    História
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(25);
                     }}
                   >
-                    >Arte
+                    Arte
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(26);
                     }}
                   >
-                    >Celebridades
+                    Celebridades
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(27);
                     }}
                   >
-                    >Animais
+                    Animais
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(28);
                     }}
                   >
-                    >Veículos
+                    Veículos
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(29);
                     }}
                   >
-                    >Comics
+                    Comics
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(30);
                     }}
                   >
-                    >Gadgets
+                    Gadgets
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(31);
                     }}
                   >
-                    >Anime e Mangá
+                    Anime e Mangá
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(32);
                     }}
                   >
-                    > Desenhos e animações
+                    Desenhos e animações
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
