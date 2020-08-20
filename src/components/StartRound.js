@@ -196,13 +196,13 @@ export default function StartRound() {
                   >
                     Matemática
                   </Dropdown.Item>
-                  <Dropdown.Item
+                  {/* <Dropdown.Item
                     onClick={() => {
                       changeCategory(20);
                     }}
                   >
                     Mitologia
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(21);
@@ -245,27 +245,27 @@ export default function StartRound() {
                   >
                     Animais
                   </Dropdown.Item>
-                  <Dropdown.Item
+                  {/* <Dropdown.Item
                     onClick={() => {
                       changeCategory(28);
                     }}
                   >
                     Veículos
-                  </Dropdown.Item>
-                  <Dropdown.Item
+                  </Dropdown.Item> */}
+                  {/* <Dropdown.Item
                     onClick={() => {
                       changeCategory(29);
                     }}
                   >
                     Comics
-                  </Dropdown.Item>
-                  <Dropdown.Item
+                  </Dropdown.Item> */}
+                  {/* <Dropdown.Item
                     onClick={() => {
                       changeCategory(30);
                     }}
                   >
                     Gadgets
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
                   <Dropdown.Item
                     onClick={() => {
                       changeCategory(31);
