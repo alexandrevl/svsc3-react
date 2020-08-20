@@ -125,7 +125,7 @@ export default function ModalWinner() {
               </Col>
             </Row>
           </Container>
-          <audio src={tada} volume="0.8" autoPlay />
+          <audio src={tada} volume="1.2" autoPlay />
         </Modal.Body>
         {/* <Modal.Footer>
           <Button variant="success" onClick={close}>

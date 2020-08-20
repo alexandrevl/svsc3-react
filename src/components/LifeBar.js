@@ -1,10 +1,40 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import GameContext from "./GameContext.js";
 import vsImg from "./../img/vs.png";
 import { ProgressBar, Container, Row, Col } from "react-bootstrap";
+import { Animated } from "react-animated-css";
+import SocketContext from "./SocketContext.js";
 
 export default function LifeBar() {
   const gameSettings = useContext(GameContext);
+  const socket = useContext(SocketContext);
+  const [visible1, setVisible1] = useState(false);
+  const [visible2, setVisible2] = useState(false);
+  const [superChat1, setSuperChat1] = useState("");
+  const [superChat2, setSuperChat2] = useState("");
+
+  socket.on("superChat", data => {
+    let { name, randNum, value } = data;
+    // console.log(data);
+    if (randNum === 1) {
+      setSuperChat1(`${name}: + ${value}`);
+      setVisible1(true);
+      setTimeout(() => {
+        setVisible1(false);
+      }, 3000);
+    } else {
+      setSuperChat2(`${name}: + ${value}`);
+      setVisible2(true);
+      setTimeout(() => {
+        setVisible2(false);
+      }, 3000);
+    }
+  });
+  const [timeAnimation] = useState(30000);
+
+  // let styleReversed = {
+  //   direction: "rtl"
+  // };
 
   function round() {
     if (gameSettings.winner) {
@@ -69,6 +99,29 @@ export default function LifeBar() {
             <Col xs lg="3" className="text-left"></Col>
             <Col xs lg="2" className="text-right">
               <h4>Chat</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs lg="2" className="text-left">
+              <Animated
+                animationOut="zoomOut"
+                animationOutDuration={timeAnimation}
+                isVisible={visible1}
+              >
+                <h4 style={{ color: "yellow" }}>&nbsp;{superChat1}</h4>
+              </Animated>
+            </Col>
+            <Col xs lg="3" className="text-right"></Col>
+            <Col xs lg="2" className="text-center"></Col>
+            <Col xs lg="3" className="text-left"></Col>
+            <Col xs lg="2" className="text-right">
+              <Animated
+                animationOut="zoomOut"
+                animationOutDuration={timeAnimation}
+                isVisible={visible2}
+              >
+                <h4 style={{ color: "yellow" }}>&nbsp;{superChat2}</h4>
+              </Animated>
             </Col>
           </Row>
         </Container>

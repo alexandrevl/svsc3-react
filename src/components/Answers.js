@@ -4,6 +4,7 @@ import StartRound from "./StartRound.js";
 import { Table, Container, Row, Button } from "react-bootstrap";
 import SocketContext from "./SocketContext";
 import Emojis from "./Emojis";
+import Jokes from "./Jokes";
 import Sounds from "./Sounds";
 
 import GameContext from "./GameContext.js";
@@ -163,6 +164,15 @@ export default function Answers() {
                 </tbody>
               </Table>
             </Row>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <Jokes />
             <br />
             <br />
           </Container>

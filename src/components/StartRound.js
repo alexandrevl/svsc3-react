@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
 import SocketContext from "./SocketContext";
 
 //import GameContext from "./GameContext.js";
@@ -8,8 +8,20 @@ import SocketContext from "./SocketContext";
 export default function StartRound() {
   //const gameSettings = useContext(GameContext);
   const socket = useContext(SocketContext);
+  const [button, setButton] = useState("Iniciar rodada");
+  const [enableButton, setEnableButton] = useState(true);
 
   function startRound() {
+    setEnableButton(false);
+    setButton(
+      <Spinner
+        animation="border"
+        variant="white"
+        style={{ width: "2rem", height: "2rem" }}
+      >
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    );
     socket.emit("nextRound");
   }
   return (
@@ -24,8 +36,13 @@ export default function StartRound() {
             <br />
             <br />
             <br />
-            <Button variant="success" size="lg" onClick={startRound}>
-              Iniciar rodada
+            <Button
+              variant="success"
+              size="lg"
+              disabled={!enableButton}
+              onClick={startRound}
+            >
+              {button}
             </Button>
           </Col>
         </Row>
