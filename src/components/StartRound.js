@@ -44,6 +44,51 @@ export default function StartRound() {
       case 10:
         setTextCategory("Livros");
         break;
+      case 11:
+        setTextCategory("Filmes");
+        break;
+      case 12:
+        setTextCategory("Música");
+        break;
+      case 14:
+        setTextCategory("Televisão");
+        break;
+      case 19:
+        setTextCategory("Matemática");
+        break;
+      case 20:
+        setTextCategory("Mitologia");
+        break;
+      case 21:
+        setTextCategory("Esportes");
+        break;
+      case 22:
+        setTextCategory("Geografia");
+        break;
+      case 23:
+        setTextCategory("História");
+        break;
+      case 25:
+        setTextCategory("Arte");
+        break;
+      case 26:
+        setTextCategory("Celebridades");
+        break;
+      case 28:
+        setTextCategory("Veículos");
+        break;
+      case 29:
+        setTextCategory("Comics");
+        break;
+      case 30:
+        setTextCategory("Gadgets");
+        break;
+      case 31:
+        setTextCategory("Anime e Mangá");
+        break;
+      case 32:
+        setTextCategory("Desenhos e animações");
+        break;
 
       default:
         break;
@@ -120,23 +165,117 @@ export default function StartRound() {
                   >
                     Livros
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Filmes</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Música</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Televisão</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Matemática</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Mitologia</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Esportes</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Geografia</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">História</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Arte</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Celebridades</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Animais</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Veículos</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Comics</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Gadgets</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Anime e Manga</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
-                    Desenhos e animações
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(11);
+                    }}
+                  >
+                    >Filmes
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(12);
+                    }}
+                  >
+                    >Música
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(14);
+                    }}
+                  >
+                    >Televisão
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(19);
+                    }}
+                  >
+                    >Matemática
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(20);
+                    }}
+                  >
+                    >Mitologia
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(21);
+                    }}
+                  >
+                    >Esportes
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(22);
+                    }}
+                  >
+                    >Geografia
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(23);
+                    }}
+                  >
+                    >História
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(25);
+                    }}
+                  >
+                    >Arte
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(26);
+                    }}
+                  >
+                    >Celebridades
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(27);
+                    }}
+                  >
+                    >Animais
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(28);
+                    }}
+                  >
+                    >Veículos
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(29);
+                    }}
+                  >
+                    >Comics
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(30);
+                    }}
+                  >
+                    >Gadgets
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(31);
+                    }}
+                  >
+                    >Anime e Mangá
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      changeCategory(32);
+                    }}
+                  >
+                    > Desenhos e animações
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
